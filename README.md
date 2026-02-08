@@ -65,13 +65,18 @@ where `k` is the shape parameter and `lambda` is the rate parameter.
 ## Usage
 
 ```javascript
+import logpdf from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-dists-erlang-logpdf@esm/index.mjs';
+```
+The previous example will load the latest bundled code from the esm branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/stats-base-dists-erlang-logpdf/tags). For example,
+
+```javascript
 import logpdf from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-dists-erlang-logpdf@v0.2.3-esm/index.mjs';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { factory } from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-dists-erlang-logpdf@v0.2.3-esm/index.mjs';
+import { factory } from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-dists-erlang-logpdf@esm/index.mjs';
 ```
 
 #### logpdf( x, k, lambda )
@@ -165,7 +170,7 @@ y = mylogpdf( 4.0 );
 import uniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-uniform@esm/index.mjs';
 import discreteUniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-discrete-uniform@esm/index.mjs';
 import logEachMap from 'https://cdn.jsdelivr.net/gh/stdlib-js/console-log-each-map@esm/index.mjs';
-import logpdf from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-dists-erlang-logpdf@v0.2.3-esm/index.mjs';
+import logpdf from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-dists-erlang-logpdf@esm/index.mjs';
 
 var opts = {
     'dtype': 'float64'
