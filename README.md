@@ -58,20 +58,32 @@ where `k` is the shape parameter and `lambda` is the rate parameter.
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/stats-base-dists-erlang-logpdf
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import logpdf from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-dists-erlang-logpdf@deno/mod.js';
-```
-
-You can also import the following named exports from the package:
-
-```javascript
-import { factory } from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-dists-erlang-logpdf@deno/mod.js';
+var logpdf = require( '@stdlib/stats-base-dists-erlang-logpdf' );
 ```
 
 #### logpdf( x, k, lambda )
@@ -157,10 +169,10 @@ y = mylogpdf( 4.0 );
 <!-- eslint no-undef: "error" -->
 
 ```javascript
-import uniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-uniform@deno/mod.js';
-import discreteUniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-discrete-uniform@deno/mod.js';
-import logEachMap from 'https://cdn.jsdelivr.net/gh/stdlib-js/console-log-each-map@deno/mod.js';
-import logpdf from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-dists-erlang-logpdf@deno/mod.js';
+var uniform = require( '@stdlib/random-array-uniform' );
+var discreteUniform = require( '@stdlib/random-array-discrete-uniform' );
+var logEachMap = require( '@stdlib/console-log-each-map' );
+var logpdf = require( '@stdlib/stats-base-dists-erlang-logpdf' );
 
 var opts = {
     'dtype': 'float64'
@@ -176,7 +188,100 @@ logEachMap( 'x: %0.4f, k: %d, λ: %0.4f, ln(f(x;k,λ)): %0.4f', x, k, lambda, lo
 
 <!-- /.examples -->
 
+<section class="c">
 
+## C APIs
+
+<!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
+
+<section class="intro">
+
+</section>
+
+<!-- /.intro -->
+
+<!-- C usage documentation. -->
+
+<section class="usage">
+
+### Usage
+
+```c
+#include "stdlib/stats/base/dists/erlang/logpdf.h"
+```
+
+#### stdlib_base_dists_erlang_logpdf( x, k, lambda )
+
+Evaluates the natural logarithm of the [probability density function][pdf] (PDF) for an [Erlang][erlang-distribution] distribution with shape parameter `k` and rate parameter `lambda` at a value `x`.
+
+```c
+double y = stdlib_base_dists_erlang_logpdf( 1.0, 3.0, 1.5 );
+// returns ~-0.977
+```
+
+The function accepts the following arguments:
+
+-   **x**: `[in] double` input value.
+-   **k**: `[in] double` shape parameter.
+-   **lambda**: `[in] double` rate parameter.
+
+```c
+double stdlib_base_dists_erlang_logpdf( const double x, const double k, const double lambda );
+```
+
+</section>
+
+<!-- /.usage -->
+
+<!-- C API usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+
+<section class="notes">
+
+</section>
+
+<!-- /.notes -->
+
+<!-- C API usage examples. -->
+
+<section class="examples">
+
+### Examples
+
+```c
+#include "stdlib/stats/base/dists/erlang/logpdf.h"
+#include "stdlib/math/base/special/round.h"
+#include <stdlib.h>
+#include <stdio.h>
+
+static double random_uniform( const double min, const double max ) {
+    double v = (double)rand() / ( (double)RAND_MAX + 1.0 );
+    return min + ( v*(max-min) );
+}
+
+int main( void ) {
+    double lambda;
+    double x;
+    double k;
+    double y;
+    int i;
+
+    for ( i = 0; i < 5; i++ ) {
+        x = random_uniform( 0.0, 10.0 );
+        k = stdlib_base_round( random_uniform( 0.0, 10.0 ) );
+        lambda = random_uniform( 0.0, 5.0 );
+        y = stdlib_base_dists_erlang_logpdf( x, k, lambda );
+        printf( "x: %lf, k: %lf, λ: %lf, ln(f(x;k,λ)): %lf\n", x, k, lambda, y );
+    }
+}
+```
+
+</section>
+
+<!-- /.examples -->
+
+</section>
+
+<!-- /.c -->
 
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
@@ -195,7 +300,7 @@ logEachMap( 'x: %0.4f, k: %d, λ: %0.4f, ln(f(x;k,λ)): %0.4f', x, k, lambda, lo
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
