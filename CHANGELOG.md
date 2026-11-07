@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-09-21)
+## Unreleased (2026-11-07)
 
 <section class="features">
 
@@ -34,6 +34,7 @@ This release closes the following issue:
 
 <details>
 
+-   [`2861fe4`](https://github.com/stdlib-js/stdlib/commit/2861fe430548bb441cce624fcfe35a66059c5fba) - **chore:** clean-up [(#16062)](https://github.com/stdlib-js/stdlib/pull/16062) _(by Philipp Burckhardt)_
 -   [`8e421b2`](https://github.com/stdlib-js/stdlib/commit/8e421b2b823a08ff0e325792d3714d37fdf5a5da) - **style:** add missing decimal _(by Athan Reines)_
 -   [`d380d8c`](https://github.com/stdlib-js/stdlib/commit/d380d8c633b019d4bdf2f7255cec5b1e14303acc) - **docs:** fix example placement _(by Athan Reines)_
 -   [`d657500`](https://github.com/stdlib-js/stdlib/commit/d6575009529673f2cd56ae36893388ce3013f305) - **feat:** add C implementation for `stats/base/dists/erlang/logpdf` [(#10719)](https://github.com/stdlib-js/stdlib/pull/10719) _(by Kamal Singh Rautela, Neeraj Pathak, Philipp Burckhardt)_

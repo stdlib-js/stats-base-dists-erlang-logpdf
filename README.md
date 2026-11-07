@@ -188,6 +188,8 @@ logEachMap( 'x: %0.4f, k: %d, λ: %0.4f, ln(f(x;k,λ)): %0.4f', x, k, lambda, lo
 
 <!-- /.examples -->
 
+* * *
+
 <section class="c">
 
 ## C APIs
